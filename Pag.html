@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de mí - Nehuen Ramallo</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #00b4d8, #90e0ef);
+      font-family: 'Segoe UI', sans-serif;
+      color: #023e8a;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      animation: fondo 10s infinite alternate;
+    }
+
+    @keyframes fondo {
+      0% { background: linear-gradient(135deg, #ff7c2f, #f09642); }
+      100% { background: linear-gradient(135deg, #ff7c2f, #f09642); }
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2em;
+    }
+
+    .tarjeta {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 80%;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      transition: transform 0.4s;
+    }
+
+    .tarjeta:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      border: 2px solid #00b4d8;
+      border-radius: 10px;
+      padding: 8px;
+      outline: none;
+    }
+
+    button {
+      background-color: #00b4d8;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Hola! Soy Nehuen Ramallo 👋</h1>
+
+  <div class="tarjeta">
+    <p>Tengo 18 años, nací el <strong>20 de diciembre de 2006</strong> y soy estudiante de la <strong>Tecnicatura en Electrónica</strong> en la <strong>EPET N°14</strong>.</p>
+    <p>Me interesa aprender sobre programación, desarrollo de aplicaciones y la integración entre hardware y software.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Formulario de contacto</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea rows="3" placeholder="Tu mensaje..."></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
