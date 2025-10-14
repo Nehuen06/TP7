@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenido Web - Nehuen Ramallo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #caf0f8;
+      color: #03045e;
+      transition: background-color 0.5s;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    #hora {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #023e8a;
+    }
+
+    #quiz {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: inline-block;
+      padding: 20px;
+      margin-top: 30px;
+      width: 300px;
+    }
+
+    #resultado {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contenido Interactivo</h1>
+  <div id="hora"></div>
+  <button onclick="cambiarColor()">Cambiar color de fondo</button>
+
+  <div id="quiz">
+    <h3>Mini Quiz de Electrónica ⚡</h3>
+    <p>¿Qué componente almacena carga eléctrica?</p>
+    <button onclick="verificar('resistor')">Resistor</button>
+    <button onclick="verificar('condensador')">Condensador</button>
+    <button onclick="verificar('diodo')">Diodo</button>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    // Actualizar hora cada segundo
+    function actualizarHora() {
+      const horaActual = new Date().toLocaleTimeString();
+      document.getElementById('hora').textContent = "Hora actual: " + horaActual;
+    }
+    setInterval(actualizarHora, 1000);
+    actualizarHora();
+
+    // Cambiar color aleatoriamente
+    function cambiarColor() {
+      const colores = ['#caf0f8', '#ade8f4', '#90e0ef', '#48cae4', '#00b4d8', '#0077b6'];
+      document.body.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+    }
+
+    // Mini quiz
+    function verificar(respuesta) {
+      const resultado = document.getElementById('resultado');
+      if (respuesta === 'condensador') {
+        resultado.textContent = "✅ ¡Correcto! El condensador almacena carga eléctrica.";
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "❌ Incorrecto, intenta de nuevo.";
+        resultado.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
